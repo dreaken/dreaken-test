@@ -45,7 +45,7 @@ class test
 	 *
 	 * @return mysqli
 	 */
-	private function _connectToDb($dbHostname, $dbName, $dbUsername, $dbPassword): mysqli
+	private function _connectToDb(string $dbHostname, string $dbName, string $dbUsername, string $dbPassword): mysqli
 	{
 		$link = mysqli_connect($dbHostname, $dbUsername, $dbPassword, $dbName);
 		if ( ! $link)
@@ -58,11 +58,11 @@ class test
 	/**
 	 * Loads data from file
 	 *
-	 * @param $jsonDataFilePath Json file
+	 * @param string $jsonDataFilePath Json file
 	 *
 	 * @return void
 	 */
-	public function loadExternalData($jsonDataFilePath): void
+	public function loadExternalData(string $jsonDataFilePath): void
 	{
 		$fileContent = file_get_contents($jsonDataFilePath);
 		$this->_fileData = json_decode($fileContent, True);
